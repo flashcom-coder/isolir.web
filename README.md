@@ -1,2 +1,0 @@
-# isolir.web
-halaman isolir
