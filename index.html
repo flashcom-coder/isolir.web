@@ -3,90 +3,107 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Koneksi Terputus - Flashcom</title>
+    <title>Konfirmasi Perpanjangan</title>
     <style>
         body {
-            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-            margin: 0;
-            padding: 0;
+            font-family: Arial, sans-serif;
+            background-color: #f0f2f5;
             display: flex;
             justify-content: center;
             align-items: center;
             height: 100vh;
-            /* Memanggil gambar doodle sebagai background */
-            background: url('IMG_6723.png') no-repeat center center fixed;
-            background-size: cover;
+            margin: 0;
         }
-        .overlay {
-            position: absolute;
-            top: 0;
-            left: 0;
-            width: 100%;
-            height: 100%;
-            background-color: rgba(255, 255, 255, 0.8); /* Biar doodle agak transparan & teks kebaca */
-            z-index: 1;
-        }
-        .container {
-            position: relative;
-            z-index: 2;
-            background-color: #ffffff;
-            padding: 30px;
-            border-radius: 15px;
-            box-shadow: 0 10px 25px rgba(0,0,0,0.2);
+        .card {
+            background: white;
+            width: 90%;
+            max-width: 400px;
+            border-radius: 20px;
+            overflow: hidden;
+            box-shadow: 0 10px 25px rgba(0,0,0,0.1);
             text-align: center;
-            max-width: 350px;
-            width: 85%;
-            border-top: 8px solid #e74c3c;
         }
-        .logo {
-            max-width: 150px;
-            height: auto;
-            margin-bottom: 15px;
+        .header-red {
+            background-color: #e74c3c;
+            height: 15px;
         }
-        h2 {
-            color: #e74c3c;
-            font-size: 20px;
+        .header-black {
+            background-color: #000;
+            padding: 20px;
+            color: white;
+        }
+        .content {
+            padding: 30px 20px;
+        }
+        .warning-icon {
+            font-size: 50px;
+            color: #f1c40f;
             margin-bottom: 10px;
         }
+        h2 {
+            color: #c0392b;
+            margin: 0 0 15px 0;
+            font-size: 22px;
+        }
         p {
-            color: #333;
+            color: #666;
             font-size: 14px;
             line-height: 1.5;
+            margin-bottom: 25px;
         }
-        .btn-wa {
-            display: inline-block;
-            background-color: #25D366;
+        input[type="text"], input[type="file"] {
+            width: 100%;
+            padding: 12px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 8px;
+            box-sizing: border-box;
+            background-color: #fafafa;
+        }
+        .btn-whatsapp {
+            background-color: #2ecc71;
             color: white;
-            padding: 12px 20px;
-            text-decoration: none;
-            border-radius: 30px;
+            border: none;
+            padding: 15px;
+            width: 100%;
+            border-radius: 8px;
             font-weight: bold;
-            margin-top: 15px;
-            box-shadow: 0 4px 10px rgba(37, 211, 102, 0.3);
+            cursor: pointer;
+            text-transform: uppercase;
         }
         .footer {
+            font-size: 10px;
+            color: #aaa;
             margin-top: 20px;
-            font-size: 11px;
-            color: #777;
         }
     </style>
 </head>
 <body>
 
-<div class="overlay"></div>
-
-<div class="container">
-    <img src="IMG_5497.jpeg" alt="Logo Flashcom" class="logo">
+<div class="card">
+    <div class="header-red"></div>
+    <div class="header-black">
+        <div style="border: 1px solid #555; display: inline-block; padding: 2px 10px;">?</div>
+    </div>
     
-    <h2>⚠️KONEKSI TERPUTUS⚠️</h2>
-    <p>Masa aktif internet Anda telah habis. Silakan konfirmasi pembayaran untuk aktivasi kembali.</p>
-
-    <a href="https://wa.me/628988886440?text=Halo%20Admin%20Flashcom,%20saya%20mau%20bayar%20internet" class="btn-wa">
-        Hubungi Admin (WhatsApp)
-    </a>
-
-    <div class="footer">
-        &copy; 2026 Flashcom Network Dieng Digital
+    <div class="content">
+        <div class="warning-icon">⚠️</div>
+        <h2>KONEKSI TERPUTUS</h2>
+        <p>Masa aktif layanan internet Anda telah habis. <br> Silakan konfirmasi untuk perpanjangan layanan.</p>
+        
+        <form>
+            <input type="text" placeholder="Nama Pelanggan" required>
+            <input type="text" placeholder="Alamat / ID Pelanggan" required>
+            
+            <label style="display:block; text-align:left; font-size:12px; margin-bottom:5px; color:#888;">Upload Bukti Pembayaran:</label>
+            <input type="file" accept="image/*" required>
+            
+            <button type="submit" class="btn-whatsapp">KONFIRMASI VIA WHATSAPP</button>
+        </form>
+        
+        <div class="footer">
+            © 2024 FLASHCOM NETWORK DIGITAL
+        </div>
     </div>
 </div>
 
