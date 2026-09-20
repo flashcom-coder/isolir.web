@@ -133,13 +133,15 @@
         </div>
         
         <form>
-            <input type="text" id="nama" placeholder="Nama Pelanggan" required>
-            <input type="text" id="alamat" placeholder="ID Pelanggan / Alamat" required>
+            <input type="text" id="nama" class="input-field" placeholder="Nama Pelanggan" required>
+            <input type="text" id="alamat" class="input-field" placeholder="ID Pelanggan / Alamat" required>
+
             
             <label class="upload-label">Upload Bukti Pembayaran:</label>
             <input type="file" class="input-field" accept="image/*" required>
             
-            <button type="submit" class="btn-wa">KONFIRMASI VIA WHATSAPP</button>
+            <button type="button" class="btn-wa" onclick="kirimKeWA()">KONFIRMASI VIA WHATSAPP</button>
+
         </form>
         
         <div class="footer">
@@ -147,6 +149,33 @@
         </div>
     </div>
 </div>
+<script>
+function kirimKeWA() {
+    // 1. Ambil data dari kolom isian
+    var nama = document.getElementById("nama").value;
+    var alamat = document.getElementById("alamat").value;
+    
+    // 2. Cek apakah form kosong
+    if(nama === "" || alamat === "") {
+        alert("Isi dulu Nama dan ID/Alamatnya ya gaes!");
+        return; // Hentikan proses jika kosong
+    }
+
+    // 3. Masukkan nomor WA Admin (Gunakan format 62, contoh: 628988886440)
+    var noWA = "628988886440"; 
+
+    // 4. Siapkan template pesan yang akan masuk ke WA
+    var pesan = "Halo Admin Flashcom, saya sudah melakukan pembayaran.%0A%0A" +
+                "Nama: " + nama + "%0A" +
+                "ID / Alamat: " + alamat + "%0A%0A" +
+                "*Bukti transfer saya lampirkan setelah ini.*";
+
+    // 5. Buka aplikasi WhatsApp
+    var linkWA = "https://wa.me/" + noWA + "?text=" + pesan;
+    window.location.href = linkWA; 
+}
+</script>
+
 
 </body>
 </html>
